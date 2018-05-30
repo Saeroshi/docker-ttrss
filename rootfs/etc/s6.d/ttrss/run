@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export TTRSS_DOMAIN
+TTRSS_DOMAIN=${TTRSS_DOMAIN:-'_'}
+
+exec php /ttrss/update_daemon2.php
