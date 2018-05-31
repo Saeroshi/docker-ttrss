@@ -4,10 +4,10 @@ UID=${UID:-1664}
 GID=${GID:-1664}
 
 if [ -f /config/config.php ];then
-    cp -a /config/config.php /ttrss/config.php
+    ln -s /config/config.php /ttrss/config.php
 else
     cp -a /ttrss/config.php-dist /config/config.php-dist
-    echo "ERREUR aucun fichier de configuration dans config.php"
+    echo "ERREUR : Fichier /config/config.php introuvable, un fichier /config/config.php-dist à été ajouté."
     exit 1
 fi
 
